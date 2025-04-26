@@ -2,11 +2,14 @@ package my_project1;
 
 import java.sql.*;
 import java.util.Scanner;
+import io.github.cdimascio.dotenv.Dotenv;
 
-public class example{
-    private static final String URL = "jdbc:mysql://localhost:3306/student_record ";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "rounak2003";
+public class Example {
+    private static final Dotenv dotenv = Dotenv.load();
+    private static final String URL = dotenv.get("DB_URL");
+    private static final String USERNAME = dotenv.get("DB_USERNAME");
+    private static final String PASSWORD = dotenv.get("DB_PASSWORD");
+}
 
     public static void main(String[] args) {
         try {
